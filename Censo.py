@@ -28,10 +28,14 @@ COLORES = [
 # --- 3. Cargar datos ---
 @st.cache_data
 def load_data():
-    url = "https://storage.cloud.google.com/capitalia-datos-publicos/empresas.csv"
+    url = "https://storage.googleapis.com/capitalia-datos-publicos/empresas.csv"  # <-- CORRECTO
     return pd.read_csv(url, sep=';')
 
 df = load_data()
+
+st.write("Columnas detectadas:", list(df.columns))
+st.write(df.head())
+
 
 st.write("Columnas detectadas:", df.columns.to_list())
 st.write(df.head())
