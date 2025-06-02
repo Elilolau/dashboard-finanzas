@@ -33,6 +33,8 @@ def load_data():
 
 df = load_data()
 
+st.write(df.columns)
+
 # --- 4. Variables y nombres ---
 numericos = [
     "ingresos", "utilidad_neta", "total_de_activos", "total_pasivos",
