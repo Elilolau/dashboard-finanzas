@@ -40,6 +40,8 @@ def load_data(sep):
 load_data(";")
 load_data(",")
 
+df = load_data()
+
 st.write("Columnas detectadas:", list(df.columns))
 st.write(df.head())
 
