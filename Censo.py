@@ -28,13 +28,13 @@ COLORES = [
 # --- 3. Cargar datos ---
 @st.cache_data
 def load_data():
-    url = "https://drive.google.com/uc?export=download&id=1QbxXvjLOAuBbfP5sDP9wSfGeN5twvS7k"
-    return pd.read_csv(url)
+    url = "https://storage.cloud.google.com/capitalia-datos-publicos/empresas.csv"
+    return pd.read_csv(url, sep=';')
 
 df = load_data()
 
 st.write(df.columns)
-df = pd.read_csv(url, delimiter=';')
+
 
 # --- 4. Variables y nombres ---
 numericos = [
