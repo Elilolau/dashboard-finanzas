@@ -28,8 +28,8 @@ COLORES = [
 # --- 3. Cargar datos ---
 @st.cache_data
 def load_data():
-    path = r"C:\Users\Capitalia2\OneDrive\capitalia\Mercadeo\Lead Magnet\Lead Magnet 3 - Reportes Sectoriales\KNIME\mi_dashboard_financiero\datos\empresas.csv"
-    return pd.read_csv(path)
+    url = "https://drive.google.com/uc?export=download&id=1QbxXvjLOAuBbfP5sDP9wSfGeN5twvS7k"
+    return pd.read_csv(url)
 
 df = load_data()
 
