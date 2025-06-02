@@ -34,6 +34,7 @@ def load_data():
 df = load_data()
 
 st.write(df.columns)
+df = pd.read_csv(url, delimiter=';')
 
 # --- 4. Variables y nombres ---
 numericos = [
