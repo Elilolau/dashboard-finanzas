@@ -30,10 +30,11 @@ COLORES = [
 def load_data():
     url = "https://storage.cloud.google.com/capitalia-datos-publicos/empresas.csv"
     return pd.read_csv(url, sep=';')
-st.write("Columnas detectadas:", list(df.columns))
-st.write(df.head())
 
 df = load_data()
+
+st.write("Columnas detectadas:", df.columns.to_list())
+st.write(df.head())
 
 
 
