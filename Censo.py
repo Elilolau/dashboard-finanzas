@@ -29,12 +29,9 @@ COLORES = [
 @st.cache_data
 def load_data():
     url = "https://storage.googleapis.com/capitalia-datos-publicos/empresas.csv"
-    return pd.read_csv(url, sep=',', encoding="utf-8")  # Usa coma como separador
+    return pd.read_csv(url, sep=',', encoding="utf-8")
 
 df = load_data()
-st.write("Columnas detectadas:", list(df.columns))
-st.write(df.head())
-
 
 
 
