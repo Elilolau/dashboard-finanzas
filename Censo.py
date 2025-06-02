@@ -27,26 +27,12 @@ COLORES = [
 
 # --- 3. Cargar datos ---
 @st.cache_data
-def load_data(sep):
+def load_data():
     url = "https://storage.googleapis.com/capitalia-datos-publicos/empresas.csv"
-    try:
-        df = pd.read_csv(url, sep=sep, encoding="utf-8", nrows=10)  # lee solo 10 filas para prueba
-        st.write(f"Con separador '{sep}':", list(df.columns))
-        st.write(df.head())
-    except Exception as e:
-        st.error(f"Error con separador '{sep}': {e}")
-    return None
-
-load_data(";")
-load_data(",")
+    return pd.read_csv(url, sep=',', encoding="utf-8")  # Usa coma como separador
 
 df = load_data()
-
 st.write("Columnas detectadas:", list(df.columns))
-st.write(df.head())
-
-
-st.write("Columnas detectadas:", df.columns.to_list())
 st.write(df.head())
 
 
