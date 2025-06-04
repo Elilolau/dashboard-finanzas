@@ -248,7 +248,7 @@ with tab1:
                     "total_de_activos_2023", "total_de_activos_2022", "Crec. Activos (%)",
                     "utilidad_neta_2023", "utilidad_neta_2022", "Crec. Util. Neta (%)",
                     "total_pasivos_2023", "total_pasivos_2022",
-                    "ROA_2023", "ROE_2022"
+                    "ROA_2023", "ROE_2023"
                 ]
             ].copy()
             tabla_top.columns = [
@@ -257,7 +257,7 @@ with tab1:
                 "Activos 2023", "Activos 2022", "Crec. Activos (%)",
                 "Utilidad Neta 2023", "Utilidad Neta 2022", "Crec. Util. Neta (%)",
                 "Endeudamiento 2023", "Endeudamiento 2022",
-                "ROA 2023", "ROE 2022"
+                "ROA 2023", "ROE 2023"
             ]
             def miles_millones(x):
                 try:
@@ -271,7 +271,7 @@ with tab1:
                     return ""
             for col in ["Ingresos 2023", "Ingresos 2022", "Activos 2023", "Activos 2022", "Utilidad Neta 2023", "Utilidad Neta 2022", "Endeudamiento 2023", "Endeudamiento 2022"]:
                 tabla_top[col] = tabla_top[col].apply(miles_millones)
-            for col in ["Crec. Ingresos (%)", "Crec. Activos (%)", "Crec. Util. Neta (%)", "ROA 2023", "ROE 2022"]:
+            for col in ["Crec. Ingresos (%)", "Crec. Activos (%)", "Crec. Util. Neta (%)", "ROA 2023", "ROE 2023"]:
                 tabla_top[col] = tabla_top[col].apply(porcentaje)
             st.markdown("<br><h3 style='font-family: Fira Sans, sans-serif;'>Detalle Financiero Empresas Seleccionadas</h3>", unsafe_allow_html=True)
             st.dataframe(tabla_top, hide_index=True)
