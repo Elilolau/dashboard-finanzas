@@ -245,16 +245,20 @@ with tab1:
             resumen["Crec. Util. Neta (%)"] = [
                 crecimiento(row["utilidad_neta_2023"], row["utilidad_neta_2022"]) for idx, row in resumen.iterrows()
             ]
-            tabla_top = resumen[
-                [
-                    "razon_social",
-                    "ingresos_2023", "ingresos_2022", "Crec. Ingresos (%)",
-                    "total_de_activos_2023", "total_de_activos_2022", "Crec. Activos (%)",
-                    "utilidad_neta_2023", "utilidad_neta_2022", "Crec. Util. Neta (%)",
-                    "total_pasivos_2023", "total_pasivos_2022",
-                    "ROA_2023", "ROE_2023"
-                ]
-            ].copy()
+            required_cols = [
+                "razon_social",
+                "ingresos_2023", "ingresos_2022", "Crec. Ingresos (%)",
+                "total_de_activos_2023", "total_de_activos_2022", "Crec. Activos (%)",
+                "utilidad_neta_2023", "utilidad_neta_2022", "Crec. Util. Neta (%)",
+                "total_pasivos_2023", "total_pasivos_2022",
+                "ROA_2023", "ROE_2023"
+            ]
+
+            for col in required_cols:
+                if col not in resumen.columns:
+                    resumen[col] = np.nan
+
+            tabla_top = resumen[required_cols].copy()
             tabla_top.columns = [
                 "Razón Social",
                 "Ingresos 2023", "Ingresos 2022", "Crec. Ingresos (%)",
