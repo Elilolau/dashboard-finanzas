@@ -271,7 +271,7 @@ with tab1:
                 if col not in resumen.columns:
                     resumen[col] = np.nan
 
-             tabla_top = resumen[required_cols].copy()
+            tabla_top = resumen[required_cols].copy()
             tabla_top.columns = [
                 "Razón Social",
                 "Ingresos 2023", "Ingresos 2022", "Crec. Ingresos (%)",
