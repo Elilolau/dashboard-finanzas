@@ -216,15 +216,19 @@ with tab1:
 
         if analisis_opcion == "Top 1,000 empresas por ingresos":
             top1000_2023 = df_filtradas.sort_values("ingresos", ascending=False).head(1000)
-            empresas_top = top1000_2023["razon_social"].unique()
-            df_2022 = df[(df["anio"] == (ultimo_anio - 1)) & (df["razon_social"].isin(empresas_top))].copy()
+            empresas_top = top1000_2023["nit"].unique()
+            df_2022 = df[(df["anio"] == (ultimo_anio - 1)) & (df["nit"].isin(empresas_top))].copy()
             resumen = pd.merge(
                 top1000_2023,
                 df_2022,
-                on="razon_social",
+                on="nit",
                 suffixes=('_2023', '_2022'),
                 how='left'
             )
+            if "razon_social_x" in resumen.columns:
+                resumen.rename(columns={"razon_social_x": "razon_social"}, inplace=True)
+            if "razon_social_y" in resumen.columns:
+                resumen.drop(columns=["razon_social_y"], inplace=True)
             def crecimiento(a, b):
                 try:
                     if pd.isna(a) or pd.isna(b) or b == 0:
