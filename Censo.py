@@ -225,6 +225,7 @@ with tab1:
                 suffixes=('_2023', '_2022'),
                 how='left'
             )
+
             if "razon_social_2023" in resumen.columns:
                 resumen.rename(columns={"razon_social_2023": "razon_social"}, inplace=True)
             elif "razon_social_x" in resumen.columns:
@@ -240,14 +241,11 @@ with tab1:
             def crecimiento(a, b):
                 try:
                     if pd.isna(a) or pd.isna(b) or b == 0:
-                        return ""
-                    return f"{((a - b) / b) * 100:,.2f}%"
-                except:
-                    return ""
-            resumen["Crec. Ingresos (%)"] = [
-                crecimiento(row.get("ingresos_2023"), row.get("ingresos_2022"))
-                for _, row in resumen.iterrows()
-            ]
+                        return np.nan
+                    return ((a - b) / b) * 100
+                except Exception:
+                    return np.nan
+
             resumen["Crec. Ingresos (%)"] = [
                 crecimiento(row.get("ingresos_2023"), row.get("ingresos_2022"))
                 for _, row in resumen.iterrows()
@@ -273,9 +271,7 @@ with tab1:
                 if col not in resumen.columns:
                     resumen[col] = np.nan
 
-            tabla_top = resumen[required_cols].copy()
-
-            tabla_top = resumen[required_cols].copy()
+             tabla_top = resumen[required_cols].copy()
             tabla_top.columns = [
                 "Razón Social",
                 "Ingresos 2023", "Ingresos 2022", "Crec. Ingresos (%)",
