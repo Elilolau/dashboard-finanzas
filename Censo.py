@@ -229,6 +229,8 @@ with tab1:
                 resumen.rename(columns={"razon_social_x": "razon_social"}, inplace=True)
             if "razon_social_y" in resumen.columns:
                 resumen.drop(columns=["razon_social_y"], inplace=True)
+            if "razon_social" not in resumen.columns:
+                resumen["razon_social"] = np.nan
             def crecimiento(a, b):
                 try:
                     if pd.isna(a) or pd.isna(b) or b == 0:
@@ -237,13 +239,16 @@ with tab1:
                 except:
                     return ""
             resumen["Crec. Ingresos (%)"] = [
-                crecimiento(row["ingresos_2023"], row["ingresos_2022"]) for idx, row in resumen.iterrows()
+                crecimiento(row.get("ingresos_2023"), row.get("ingresos_2022"))
+                for _, row in resumen.iterrows()
             ]
             resumen["Crec. Activos (%)"] = [
-                crecimiento(row["total_de_activos_2023"], row["total_de_activos_2022"]) for idx, row in resumen.iterrows()
+                crecimiento(row.get("total_de_activos_2023"), row.get("total_de_activos_2022"))
+                for _, row in resumen.iterrows()
             ]
             resumen["Crec. Util. Neta (%)"] = [
-                crecimiento(row["utilidad_neta_2023"], row["utilidad_neta_2022"]) for idx, row in resumen.iterrows()
+                crecimiento(row.get("utilidad_neta_2023"), row.get("utilidad_neta_2022"))
+                for _, row in resumen.iterrows()
             ]
             required_cols = [
                 "razon_social",
@@ -254,6 +259,11 @@ with tab1:
                 "ROA_2023", "ROE_2023"
             ]
 
+            for col in required_cols:
+                if col not in resumen.columns:
+                    resumen[col] = np.nan
+
+            tabla_top = resumen[required_cols].copy()            
             for col in required_cols:
                 if col not in resumen.columns:
                     resumen[col] = np.nan
