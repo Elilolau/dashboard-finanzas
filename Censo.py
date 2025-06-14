@@ -62,9 +62,9 @@ DIVISOR = 1_000  # Para mostrar valores en Miles de millones
 variables_porcentaje = {"ROE", "ROA", "margen_ebitda", "deuda_/_activos", "crecimiento_ingresos"}
 
 # --- 5. Definir Tabs ---
-tab1, tab2, tab3 = st.tabs(["Distribución", "Relación entre Variables","Correlaciones"])
+tab1, tab_sumas, tab2, tab3 = st.tabs(["Conteo", "Sumas", "Relación entre Variables", "Correlaciones"])
 
-# --------- TAB 1: DISTRIBUCIÓN -----------
+# --------- TAB 1: CONTEO -----------
 with tab1:
     st.markdown("<h1 style='text-align:center; font-family: Fira Sans, sans-serif;'>Distribución de Empresas en SuperSociedades</h1>", unsafe_allow_html=True)
     ultimo_anio = df["anio"].max()
@@ -297,6 +297,11 @@ with tab1:
             st.markdown("<br><h3 style='font-family: Fira Sans, sans-serif;'>Detalle Financiero Empresas Seleccionadas</h3>", unsafe_allow_html=True)
             st.dataframe(tabla_top, hide_index=True)
 
+# --------- TAB SUMAS -----------
+with tab_sumas:
+    st.markdown("<h2 style='text-align:center; font-family: Fira Sans, sans-serif;'>Sumas</h2>", unsafe_allow_html=True)
+    st.info("Este tab está en construcción. Pronto podrás ver la suma de variables para los filtros seleccionados.")
+    
 # --------- TAB 2: SCATTERPLOT ------------
 with tab2:
     st.markdown("<h2 style='text-align:center; font-family: Fira Sans, sans-serif;'>Relación entre dos Indicadores Financieros</h2>", unsafe_allow_html=True)
