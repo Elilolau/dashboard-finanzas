@@ -396,17 +396,8 @@ with tab_sumas:
 
     st.markdown("""
     <div style='background:#FBAF3A22; border-radius:12px; padding:18px 8px; margin:18px 0; text-align:center;'>
-        <h4 style='margin-bottom:10px;'>¿Por qué Reporte Capitalia?</h4>
-        <ul style='display:inline-block; text-align:left; font-size:16px; margin:0 auto;'>
-          <li>✔️ Análisis financiero inmediato</li>
-          <li>✔️ Comparación con tu sector</li>
-          <li>✔️ Respuestas automáticas por IA</li>
-          <li>✔️ Asesoría personalizada</li>
-        </ul>
-        <br>
-        <a href="https://www.reporte-capitalia.com/registro" target="_blank">
-          <button style='background:#BF1B18; color:white; font-size:16px; border:none; padding:8px 30px; border-radius:6px; cursor:pointer; margin-top:10px;'>Regístrate gratis</button>
-        </a>
+        <h4>¿Por qué Reporte Capitalia?</h4>
+        <p>Test Banner</p>
     </div>
     """, unsafe_allow_html=True)
 
