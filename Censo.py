@@ -441,7 +441,7 @@ with tab_sumas:
     
 # --------- TAB 2: SCATTERPLOT ------------
 with tab2:
-    st.markdown("<h2 style='text-align:center; font-family: Fira Sans, sans-serif;'>Relación entre dos Indicadores Financieros</h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align:center; font-family: Fira Sans, sans-serif;'>Relación entre dos Indicadores Financieros</h2>", unsafe_allow_html=True)
     ultimo_anio = df["anio"].max()
     df_anio = df[df["anio"] == ultimo_anio]
     analisis_opcion2 = st.radio(
@@ -546,8 +546,7 @@ with tab2:
 with tab3:
     import plotly.express as px
 
-    with st.expander("Ver mapa de calor de correlaciones entre indicadores financieros (toda la muestra)", expanded=True):
-        st.markdown("### Mapa de calor de correlaciones entre indicadores")
+    st.markdown("<h1 style='text-align:center; font-family: Fira Sans, sans-serif;'>Mapa de calor de correlaciones entre indicadores</h2>", unsafe_allow_html=True)
         df_num = df[numericos].copy().replace([np.inf, -np.inf], np.nan).dropna()
         corr_matrix = df_num.corr(method="pearson")  # O "spearman" si prefieres
 
