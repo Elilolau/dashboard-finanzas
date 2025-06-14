@@ -395,12 +395,33 @@ with tab_sumas:
 # ---- banner Reporte Capitalia ----
 
     st.markdown("""
-    <div style='background:#FBAF3A22; border-radius:12px; padding:18px 8px; margin:18px 0; text-align:center;'>
-        <h4>¿Por qué Reporte Capitalia?</h4>
-        <p>Test Banner</p>
+        <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
+          <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>¿Por qué usar Reporte Capitalia?</h2>
+          <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
+            <b>Reporte Capitalia</b> es la plataforma líder en análisis financiero automatizado para empresas colombianas.<br>
+            Descubre cómo puedes comparar tu empresa con el sector, recibir recomendaciones por IA y acceder a reportes claros en segundos.<br>
+            <br>
+            <ul style='display:inline-block; text-align:left; margin:0 auto; font-size:17px;'>
+              <li><b style='color:#BF1B18;'>✔️</b> Análisis financiero inmediato y confiable</li>
+              <li><b style='color:#BF1B18;'>✔️</b> Comparación con miles de empresas del mismo sector</li>
+              <li><b style='color:#BF1B18;'>✔️</b> Recomendaciones automáticas generadas por IA</li>
+              <li><b style='color:#BF1B18;'>✔️</b> Exporta tus reportes y comparte con tu equipo</li>
+              <li><b style='color:#BF1B18;'>✔️</b> Acceso 100% en línea, sin instalaciones</li>
+            </ul>
+            <br>
+            <span style='font-size:16px; color:#333;'>
+              Más de <b>30,000 empresas</b> ya están usando Reporte Capitalia.<br>
+              ¡Lleva tu análisis financiero al siguiente nivel!
+            </span>
+            <br><br>
+            <a href="https://www.reporte-capitalia.com" target="_blank">
+              <button style='background:#BF1B18; color:white; font-size:18px; border:none; padding:10px 34px; border-radius:8px; cursor:pointer; margin-top:10px; font-weight:600; box-shadow:0 2px 8px #bf1b1822;'>
+                Ir al sitio web
+              </button>
+            </a>
+          </div>
     </div>
     """, unsafe_allow_html=True)
-
     
     # Mostrar tabla de valores
     df_group["Valor"] = df_group["Valor"].apply(formato_valor)
