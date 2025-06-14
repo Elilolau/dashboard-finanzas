@@ -392,6 +392,25 @@ with tab_sumas:
     )
     st.plotly_chart(fig, use_container_width=True)
 
+# ---- banner Reporte Capitalia ----
+
+    st.markdown("""
+    <div style='background:#FBAF3A22; border-radius:12px; padding:18px 8px; margin:18px 0; text-align:center;'>
+        <h4 style='margin-bottom:10px;'>¿Por qué Reporte Capitalia?</h4>
+        <ul style='display:inline-block; text-align:left; font-size:16px; margin:0 auto;'>
+          <li>✔️ Análisis financiero inmediato</li>
+          <li>✔️ Comparación con tu sector</li>
+          <li>✔️ Respuestas automáticas por IA</li>
+          <li>✔️ Asesoría personalizada</li>
+        </ul>
+        <br>
+        <a href="https://www.reporte-capitalia.com/registro" target="_blank">
+          <button style='background:#BF1B18; color:white; font-size:16px; border:none; padding:8px 30px; border-radius:6px; cursor:pointer; margin-top:10px;'>Regístrate gratis</button>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+
+    
     # Mostrar tabla de valores
     df_group["Valor"] = df_group["Valor"].apply(formato_valor)
     st.markdown(f"<h3 style='font-family: Fira Sans, sans-serif;'>{valor_label} por industria</h3>", unsafe_allow_html=True)
