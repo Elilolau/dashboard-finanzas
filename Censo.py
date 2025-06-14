@@ -524,23 +524,23 @@ with tab2:
         st.warning("No hay datos disponibles para esta combinación de variables y filtros.")
 
       # ---- banner Reporte Capitalia ----
-        st.markdown("""
-        <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
-            <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>Convierte datos complejos en decisiones claras para tu empresa</h2>
-            <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
-                <b>Reporte Capitalia:</b> simplifica el análisis financiero con visualizaciones fáciles de entender.<br>
-                <div style='margin:14px 0 4px 0; text-align:center; font-size:17px;'>
-                    <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Identifica patrones y relaciones entre variables financieras</span>
-                    <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Descubre insights accionables para tu negocio</span>
-                </div>
-                <a href="https://reportecapitalia.ai/" target="_blank">
-                    <button style='background:#BF1B18; color:white; font-size:18px; border:none; padding:10px 34px; border-radius:8px; cursor:pointer; margin-top:10px; font-weight:600; box-shadow:0 2px 8px #bf1b1822;'>
-                        Ir al sitio web
-                    </button>
-                </a>
+    st.markdown("""
+    <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
+        <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>Convierte datos complejos en decisiones claras para tu empresa</h2>
+        <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
+            <b>Reporte Capitalia:</b> simplifica el análisis financiero con visualizaciones fáciles de entender.<br>
+            <div style='margin:14px 0 4px 0; text-align:center; font-size:17px;'>
+                <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Identifica patrones y relaciones entre variables financieras</span>
+                <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Descubre insights accionables para tu negocio</span>
             </div>
+            <a href="https://reportecapitalia.ai/" target="_blank">
+                <button style='background:#BF1B18; color:white; font-size:18px; border:none; padding:10px 34px; border-radius:8px; cursor:pointer; margin-top:10px; font-weight:600; box-shadow:0 2px 8px #bf1b1822;'>
+                    Ir al sitio web
+                </button>
+            </a>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
         
 # --------- TAB 3: CORRELACIONES ------------
 with tab3:
@@ -635,20 +635,20 @@ with tab3:
     """, unsafe_allow_html=True)
 
       # ---- banner Reporte Capitalia ----
-        st.markdown("""
-        <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
-            <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>Descubre el verdadero impacto de cada variable financiera en tus resultados</h2>
-            <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
-                <b>Con Reporte Capitalia:</b> explora correlaciones que te ayudan a anticipar riesgos y detectar oportunidades.<br>
-                <div style='margin:14px 0 4px 0; text-align:center; font-size:17px;'>
-                    <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Analiza tendencias históricas con inteligencia artificial</span>
-                    <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Mejora tu análisis con una plataforma intuitiva</span>
-                </div>
-                <a href="https://reportecapitalia.ai/" target="_blank">
-                    <button style='background:#BF1B18; color:white; font-size:18px; border:none; padding:10px 34px; border-radius:8px; cursor:pointer; margin-top:10px; font-weight:600; box-shadow:0 2px 8px #bf1b1822;'>
-                        Ir al sitio web
-                    </button>
-                </a>
+    st.markdown("""
+    <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
+        <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>Descubre el verdadero impacto de cada variable financiera en tus resultados</h2>
+        <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
+            <b>Con Reporte Capitalia:</b> explora correlaciones que te ayudan a anticipar riesgos y detectar oportunidades.<br>
+            <div style='margin:14px 0 4px 0; text-align:center; font-size:17px;'>
+                <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Analiza tendencias históricas con inteligencia artificial</span>
+                <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Mejora tu análisis con una plataforma intuitiva</span>
             </div>
+            <a href="https://reportecapitalia.ai/" target="_blank">
+                <button style='background:#BF1B18; color:white; font-size:18px; border:none; padding:10px 34px; border-radius:8px; cursor:pointer; margin-top:10px; font-weight:600; box-shadow:0 2px 8px #bf1b1822;'>
+                    Ir al sitio web
+                </button>
+            </a>
         </div>
-        """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
