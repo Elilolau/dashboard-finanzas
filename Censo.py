@@ -332,6 +332,7 @@ with tab_sumas:
         df_group["Valor"] = df_group["Valor"] * 100  # Para mostrar en %
         valor_label = "Promedio (%)"
         formato_valor = lambda x: f"{x:,.2f}%"
+        subtitulo = f"Promedio de {indicador_opcion} por industria"
     else:
         # Suma para variables monetarias
         df_group = (
@@ -342,9 +343,25 @@ with tab_sumas:
         df_group["Valor"] = df_group["Valor"] / DIVISOR  # Para mostrar en miles de millones
         valor_label = "Suma (Miles de millones de COP)"
         formato_valor = lambda x: f"{x:,.0f}"
+        subtitulo = f"Suma de {indicador_opcion} por industria"
 
     df_group = df_group.sort_values("Valor", ascending=False)
     df_group = df_group[df_group["industria"].notnull()]
+
+    # --------- TÍTULOS ---------
+    # Título principal
+    st.markdown(
+        f"<h2 style='text-align:center; font-family: Fira Sans, sans-serif;'>{indicador_opcion} ({ultimo_anio})</h2>",
+        unsafe_allow_html=True
+    )
+
+    # Subtítulo con formato e info de filtros
+    st.markdown(
+        "<div style='text-align:center; color:#666; font-size:18px; font-family: Fira Sans, sans-serif;'>" +
+        f"{subtitulo}<br>" +
+        ("Top 1,000 empresas por ingresos" if analisis_opcion == "Top 1,000 empresas por ingresos" else "Todas las empresas") +
+        "</div>", unsafe_allow_html=True
+    )
 
     # Gráfica de barras horizontales
     import plotly.express as px
