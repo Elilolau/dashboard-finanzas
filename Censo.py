@@ -180,9 +180,9 @@ with tab1:
         st.markdown("<br>", unsafe_allow_html=True)
 
 
-        # ---- banner Reporte Capitalia ----
+  # ---- banner Reporte Capitalia ----
 
-    st.markdown("""
+st.markdown("""
          <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
            <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>Toma decisiones basadas en datos financieros confiables</h2>
            <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
