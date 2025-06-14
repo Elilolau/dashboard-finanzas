@@ -64,8 +64,6 @@ variables_porcentaje = {"ROE", "ROA", "margen_ebitda", "deuda_/_activos", "creci
 # --- LOGO ---
 st.image("logo_capitalia.png", width=220)
 
-)
-
 
 # --- 5. Definir Tabs ---
 tab1, tab_sumas, tab2, tab3 = st.tabs(["Conteo", "Sumas", "Relación entre Variables", "Correlaciones"])
