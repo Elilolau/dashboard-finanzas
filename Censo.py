@@ -182,23 +182,23 @@ with tab1:
 
   # ---- banner Reporte Capitalia ----
 
-st.markdown("""
-         <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
-           <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>Toma decisiones basadas en datos financieros confiables</h2>
-           <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
-             <b>Reporte Capitalia:</b> centraliza cifras clave de ingresos, activos y más para miles de empresas en Colombia.<br>
-             <div style='margin:14px 0 4px 0; text-align:center; font-size:17px;'>
-               <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Datos financieros agregados y listos para analizar</span>
-               <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Visualiza oportunidades de negocio en segundos</span>
-             </div>
-             <a href="https://reportecapitalia.ai/" target="_blank">
+    st.markdown("""
+        <div style='background:#FBAF3A22; border-radius:14px; padding:24px 16px; margin:30px 0; text-align:center; box-shadow: 0 2px 12px #00000022;'>
+          <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>Toma decisiones basadas en datos financieros confiables</h2>
+          <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
+            <b>Reporte Capitalia:</b> centraliza cifras clave de ingresos, activos y más para miles de empresas en Colombia.<br>
+            <div style='margin:14px 0 4px 0; text-align:center; font-size:17px;'>
+              <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Datos financieros agregados y listos para analizar</span>
+              <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Visualiza oportunidades de negocio en segundos</span>
+            </div>
+            <a href="https://reportecapitalia.ai/" target="_blank">
                <button style='background:#BF1B18; color:white; font-size:18px; border:none; padding:10px 34px; border-radius:8px; cursor:pointer; margin-top:10px; font-weight:600; box-shadow:0 2px 8px #bf1b1822;'>
                  Ir al sitio web
                </button>
-             </a>
-           </div>
-         </div>
-    """, unsafe_allow_html=True)
+            </a>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
         # --- Tabla de segmentos sincronizada con los bins ---
         conteo_segmentos = []
