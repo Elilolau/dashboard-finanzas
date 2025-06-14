@@ -63,7 +63,7 @@ variables_porcentaje = {"ROE", "ROA", "margen_ebitda", "deuda_/_activos", "creci
 
 # --- LOGO ---
 st.markdown(
-    "<div style='text-align:center'><img src='https://raw.githubusercontent.com/ Elilolau/dashboard-finanzas/blob/main/logo_capitalia.png' width='220'/></div>",
+    "<div style='text-align:center'><img src='https://raw.githubusercontent.com/Eililolau/dashboard-finanzas/main/logo_capitalia.png' width='220'/></div>",
     unsafe_allow_html=True
 )
 
