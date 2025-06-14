@@ -399,19 +399,19 @@ with tab_sumas:
           <h2 style='color:#BF1B18; margin-bottom:12px; font-size:28px;'>¿Necesitas analizar la salud financiera de clientes, proveedores o competencia?</h2>
           <div style='max-width:650px; margin:0 auto; font-size:17px; color:#222; text-align:center; line-height:1.5;'>
             <b>Reporte Capitalia:</b> Análisis financiero automatizado con IA para 30.000 empresas en Colombia.<br>
-            <ul style='display:inline-block; text-align:left; margin:0 auto; font-size:17px;'>
-              <li><b style='color:#BF1B18;'>✔️</b> Análisis financiero inmediato y confiable</li>
-              <li><b style='color:#BF1B18;'>✔️</b> Recomendaciones automáticas generadas por IA</li>
-             </ul>
-            <br>
+            <div style='margin:14px 0 4px 0; text-align:center; font-size:17px;'>
+              <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Análisis financiero inmediato y confiable</span>
+              <span style='display:block; margin:2px 0;'><b style='color:#BF1B18;'>✔️</b> Recomendaciones automáticas generadas por IA</span>
+            </div>
             <a href="https://reportecapitalia.ai/" target="_blank">
               <button style='background:#BF1B18; color:white; font-size:18px; border:none; padding:10px 34px; border-radius:8px; cursor:pointer; margin-top:10px; font-weight:600; box-shadow:0 2px 8px #bf1b1822;'>
                 Ir al sitio web
               </button>
             </a>
           </div>
-    </div>
-    """, unsafe_allow_html=True)
+        </div>
+        """, unsafe_allow_html=True)
+
     
     # Mostrar tabla de valores
     df_group["Valor"] = df_group["Valor"].apply(formato_valor)
