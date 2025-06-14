@@ -323,9 +323,11 @@ with tab_sumas:
 
     # Agrupar por industria y calcular suma o promedio según el tipo de variable
     if col_num in variables_porcentaje:
+        # Eliminar outliers fuera del rango [-100%, 100%]
+        df_pct = df_filtradas[(df_filtradas[col_num] <= 1) & (df_filtradas[col_num] >= -1)].copy()
         # Promedio para variables de porcentaje
         df_group = (
-            df_filtradas.groupby("industria", as_index=False)[col_num]
+            df_pct.groupby("industria", as_index=False)[col_num]
             .mean()
             .rename(columns={col_num: "Valor"})
         )
@@ -344,6 +346,7 @@ with tab_sumas:
         valor_label = "Suma (Miles de millones de COP)"
         formato_valor = lambda x: f"{x:,.0f}"
         subtitulo = f"Suma de {indicador_opcion} por industria"
+
 
     df_group = df_group.sort_values("Valor", ascending=False)
     df_group = df_group[df_group["industria"].notnull()]
