@@ -61,6 +61,12 @@ nombres = {
 DIVISOR = 1_000  # Para mostrar valores en Miles de millones
 variables_porcentaje = {"ROE", "ROA", "margen_ebitda", "deuda_/_activos", "crecimiento_ingresos"}
 
+# --- LOGO ---
+st.markdown(
+    "<div style='text-align:center'><img src='logo_capitalia.png' width='220'/></div>",
+    unsafe_allow_html=True
+)
+
 # --- 5. Definir Tabs ---
 tab1, tab_sumas, tab2, tab3 = st.tabs(["Conteo", "Sumas", "Relación entre Variables", "Correlaciones"])
 
