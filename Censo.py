@@ -297,10 +297,82 @@ with tab1:
             st.markdown("<br><h3 style='font-family: Fira Sans, sans-serif;'>Detalle Financiero Empresas Seleccionadas</h3>", unsafe_allow_html=True)
             st.dataframe(tabla_top, hide_index=True)
 
-# --------- TAB SUMAS -----------
+# --------- TAB 2: SUMAS -----------
 with tab_sumas:
-    st.markdown("<h2 style='text-align:center; font-family: Fira Sans, sans-serif;'>Sumas</h2>", unsafe_allow_html=True)
-    st.info("Este tab está en construcción. Pronto podrás ver la suma de variables para los filtros seleccionados.")
+    st.markdown("<h1 style='text-align:center; font-family: Fira Sans, sans-serif;'>Distribución de Empresas en SuperSociedades</h1>", unsafe_allow_html=True)
+    ultimo_anio = df["anio"].max()
+    df_anio = df[df["anio"] == ultimo_anio]
+
+    analisis_opcion = st.radio(
+        "¿Qué empresas quieres analizar?",
+        options=["Top 1,000 empresas por ingresos", "Todas las empresas"],
+        key="radio_tab_sumas"
+    )
+
+    if analisis_opcion == "Top 1,000 empresas por ingresos":
+        df_filtradas = df_anio[df_anio["ingresos"] > 0].sort_values("ingresos", ascending=False).head(1000)
+    else:
+        df_filtradas = df_anio[df_anio["ingresos"] > 0].copy()
+
+    indicador_opcion = st.selectbox(
+        "Selecciona la variable que quieras analizar:",
+        list(nombres.keys()),
+        key="variable_tab_sumas"
+    )
+    col_num = nombres[indicador_opcion]
+
+    # Agrupar por industria y calcular suma o promedio según el tipo de variable
+    if col_num in variables_porcentaje:
+        # Promedio para variables de porcentaje
+        df_group = (
+            df_filtradas.groupby("industria", as_index=False)[col_num]
+            .mean()
+            .rename(columns={col_num: "Valor"})
+        )
+        df_group["Valor"] = df_group["Valor"] * 100  # Para mostrar en %
+        valor_label = "Promedio (%)"
+        formato_valor = lambda x: f"{x:,.2f}%"
+    else:
+        # Suma para variables monetarias
+        df_group = (
+            df_filtradas.groupby("industria", as_index=False)[col_num]
+            .sum()
+            .rename(columns={col_num: "Valor"})
+        )
+        df_group["Valor"] = df_group["Valor"] / DIVISOR  # Para mostrar en miles de millones
+        valor_label = "Suma (Miles de millones de COP)"
+        formato_valor = lambda x: f"{x:,.0f}"
+
+    df_group = df_group.sort_values("Valor", ascending=False)
+    df_group = df_group[df_group["industria"].notnull()]
+
+    # Gráfica de barras horizontales
+    import plotly.express as px
+    fig = px.bar(
+        df_group,
+        x="Valor",
+        y="industria",
+        orientation="h",
+        color_discrete_sequence=[COLORES[0]],
+        labels={"industria": "Industria", "Valor": valor_label},
+        title="",
+    )
+    fig.update_layout(
+        margin=dict(t=40, b=40),
+        font=dict(family="Fira Sans, sans-serif"),
+        plot_bgcolor='white',
+        paper_bgcolor='white',
+        yaxis={'categoryorder':'total ascending'},
+        xaxis_title=valor_label,
+        yaxis_title="Industria"
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+    # Mostrar tabla de valores
+    df_group["Valor"] = df_group["Valor"].apply(formato_valor)
+    st.markdown(f"<h3 style='font-family: Fira Sans, sans-serif;'>{valor_label} por industria</h3>", unsafe_allow_html=True)
+    st.dataframe(df_group.rename(columns={"industria": "Industria", "Valor": valor_label}), hide_index=True)
+
     
 # --------- TAB 2: SCATTERPLOT ------------
 with tab2:
